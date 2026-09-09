@@ -1,0 +1,11 @@
+# Python dependencies for mimii_fan_classifier.py
+# Install with: pip install -r requirements.txt
+
+numpy
+librosa
+joblib
+matplotlib
+scikit-learn
+tensorflow<2.16
+
+One deliberate choice: I pinned tensorflow<2.16. That's not arbitrary — TensorFlow 2.16+ switched to Keras 3, which changes how .h5 files get serialized, and DEEPCRAFT Model Converter (Section 11 of the documentation) expects the pre-Keras-3 .h5 convention. Pinning it avoids hitting that same issue again, unless you'd rather stay on the newer TensorFlow and save as .keras instead when the time comes
